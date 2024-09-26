@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Project Information</title>
+  </head>
+  <body>
+    <h1>Employee List:</h1>
+    {% if Project_list %}
+    <table>
+        <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Name</th>
+                <th>Assigned To</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in Project_list %}
+            <tr>
+                <td>{{ pro.startdate }}</td>
+                <td>{{ pro.enddate }}</td>
+                <td>{{ pro.name }}</td>
+                <td>{{ pro.assignedto }}</td>
+                <td>{{ pro.priority }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No records found</p>
+    {% endif %}
+  </body>
+</html>

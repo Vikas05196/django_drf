@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Project Information</title>
+  </head>
+  <body>
+    <h1>Student List:</h1>
+    <table border ="2">
+    {% if students %}
+    <table>
+        <thead>
+            <tr>
+              <th>Id</th>              
+                <th>first name</th>
+                <th>last name </th>
+                <th>Score</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in students %}
+            <tr>
+                <td>{{pro.id}}</td>
+                <td>{{ pro.fname }}</td>
+                <td>{{ pro.lname }}</td>
+                <td>{{ pro.score }}</td>
+                <td><a href = "/Update/{{students.id}}">Update </a></td>
+                <td><a href = "/Delete/{{students.id}}">Delete </a></td> 
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/> <br/> <br/>
+    <a href = "/create">Add students </a>
+
+    {% else %}
+    <p>No records found</p>
+    {% endif %}
+  </body>
+</html>

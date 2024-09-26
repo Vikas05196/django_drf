@@ -1,0 +1,83 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add project</title>
+</head>
+<body>
+    <h1>Add project:</h1>
+    <form method = "POST">
+        
+    {{forms.as_p}}
+    {% csrf_token %}
+    
+        
+    <input type = "submit" name = "" value = "Addprojrect">
+</form>
+    
+</body>
+</html> {% endcomment %}
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Project</title>
+</head>
+<body>
+    <h1>Add project:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add project">
+    </form>
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Project Information</title>
+</head>
+<body>
+    <h1>Add Project:</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add project">
+    </form>
+</body>
+</html>
+
+    {% comment %} <h1>Employee List:</h1>
+    {% if projects %}
+    <table>
+        <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Name</th>
+                <th>Assigned To</th>
+                <th>Priority</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pro in projects %}
+            <tr>
+                <td>{{ pro.startdate }}</td>
+                <td>{{ pro.enddate }}</td>
+                <td>{{ pro.name }}</td>
+                <td>{{ pro.assignedto }}</td>
+                <td>{{ pro.priority }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No records found</p>
+    {% endif %}
+</body>
+</html> {% endcomment %}
